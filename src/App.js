@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import Counter from "./components/counter";
 
-function App() {
+const App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Fragment>
+    <Navbar bg="dark" expand="sm" variant="dark">
+        <Container>
+          <Nav>
+            <Nav.Link>Home</Nav.Link>
+            <Nav.Link>Store</Nav.Link>
+            <Nav.Link>About</Nav.Link>
+          </Nav>
+        </Container>
+    </Navbar>
+    <Counter/>
+   </Fragment>
+    
   );
 }
 
