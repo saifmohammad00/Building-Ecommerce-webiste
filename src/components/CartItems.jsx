@@ -1,5 +1,6 @@
 import { Offcanvas, Button, ListGroup } from "react-bootstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import ContextApi from "../Store/ContextApi";
 const cartElements = [
 
     {
@@ -47,8 +48,12 @@ const CartItems = () => {
     const handleShow = () => {
         setShow(true);
     }
+    const conCtx=useContext(ContextApi);
+    const handleRemove=(id)=>{
+         conCtx.removeItem(id);
+    }
     return <>
-        <Button variant="primary" onClick={handleShow} className="me-3">Cart</Button>
+        <Button variant="primary" onClick={handleShow} className="me-3">Cart {conCtx.items.length}</Button>
         <Offcanvas show={show} onHide={handleClose} placement="end" backdrop={false} scroll={true} >
             <Offcanvas.Header closeButton >
                 <Offcanvas.Title>Cart Items</Offcanvas.Title>
@@ -62,22 +67,22 @@ const CartItems = () => {
                             <strong>Quantity</strong>
                         </div>
                     </ListGroup.Item>
-                    {cartElements.map((item, index) => {
-                        return <ListGroup.Item key={index}>
+                    {conCtx.items.map((item) => {
+                        return <ListGroup.Item key={item.id}>
                             <div className="d-flex justify-content-between align-items-center">
                                 <span style={{maxWidth:'100px'}}>
-                                    <img src={item.imageUrl} alt={item.title} style={{ maxWidth: '90px', marginRight: '10px' }} />
+                                    <img src={item.url} alt={item.title} style={{ maxWidth: '90px', marginRight: '10px' }} />
                                     <span>{item.title}</span>
                                 </span>
-                                <span>Price: ${item.price}</span>
-                                <div>
-                                    <div>Quantity: {item.quantity}</div>
-                                    <Button variant="primary">Remove</Button>
-                                </div>
+                                <span>${item.price}</span>
+                                <span>
+                                    <input defaultValue={item.amount} style={{maxWidth: "20px", marginRight:"5px" }}/>
+                                    <Button variant="primary" onClick={()=>handleRemove(item.id)}>Remove</Button>
+                                </span>
                             </div>
                         </ListGroup.Item>
                     })}
-                    <ListGroup.Item className="text-end" ><strong>Total</strong> $0.00</ListGroup.Item>
+                    <ListGroup.Item className="text-end" ><strong>Total</strong> ${conCtx.totalAmount.toFixed(2)}</ListGroup.Item>
                 </ListGroup>
             </Offcanvas.Body>
         </Offcanvas>

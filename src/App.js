@@ -1,14 +1,14 @@
 import { Fragment, useState } from "react";
 import ProductItems from "./components/ProductItems";
 import NavBar from "./components/NavBar";
+import ContextProvider from "./Store/ContextProvider";
 
-const App=()=> {
+const App = () => {
   return (
-   <Fragment>
-    <NavBar/>
-    <ProductItems/>
-   </Fragment>
-    
+    <ContextProvider>
+      <NavBar />
+      <ProductItems />
+    </ContextProvider>
   );
 }
 
