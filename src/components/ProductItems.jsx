@@ -1,7 +1,7 @@
 import { Fragment } from "react"
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
 
-const Counter = () => {
+const ProductItems = () => {
     const productsArr = [
 
         {
@@ -46,21 +46,22 @@ const Counter = () => {
 
     ]
     return <Fragment>
-        <Container className="mt-3">
-            <Row>
-                {productsArr.map((item) => {
-                    return <Col xs={4}>
-                        <Card className="shadow-lg">
-                            <Card.Title>
-                                {item.title}
-                            </Card.Title>
-                            <Card.Img src={item.imageUrl}/>
-                            <Card.Footer>${item.price}</Card.Footer>
+        <Container className="mt-5">
+            <Row xs={2} className="g-5">
+                {productsArr.map((item, index) => (
+                    <Col key={index} lg={5}>
+                        <Card className="shadow-lg m-5">
+                            <Card.Title className="text-center"><h2>{item.title}</h2></Card.Title>
+                            <Card.Img src={item.imageUrl} className="p-5" />
+                            <Card.Footer className="d-flex justify-content-between float-end">
+                                <span>${item.price}</span>
+                                <Button variant="primary">Add to Cart</Button>
+                            </Card.Footer>
                         </Card>
                     </Col>
-                })}
+                ))}
             </Row>
         </Container>
     </Fragment>
 }
-export default Counter;
+export default ProductItems;

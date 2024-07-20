@@ -1,20 +1,12 @@
-import { Fragment } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import Counter from "./components/counter";
+import { Fragment, useState } from "react";
+import ProductItems from "./components/ProductItems";
+import NavBar from "./components/NavBar";
 
 const App=()=> {
   return (
    <Fragment>
-    <Navbar bg="dark" expand="sm" variant="dark">
-        <Container>
-          <Nav>
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Store</Nav.Link>
-            <Nav.Link>About</Nav.Link>
-          </Nav>
-        </Container>
-    </Navbar>
-    <Counter/>
+    <NavBar/>
+    <ProductItems/>
    </Fragment>
     
   );
