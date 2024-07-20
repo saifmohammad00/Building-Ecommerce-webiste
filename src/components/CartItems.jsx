@@ -1,6 +1,6 @@
 import { Offcanvas, Button, ListGroup } from "react-bootstrap";
 import { useContext, useState } from "react";
-import ContextApi from "../Store/ContextApi";
+import ContextApi from "../context/ContextApi";
 const cartElements = [
 
     {
@@ -76,7 +76,7 @@ const CartItems = () => {
                                 </span>
                                 <span>${item.price}</span>
                                 <span>
-                                    <input defaultValue={item.amount} style={{maxWidth: "20px", marginRight:"5px" }}/>
+                                    <input value={item.amount} style={{maxWidth: "20px", marginRight:"5px" }}/>
                                     <Button variant="primary" onClick={()=>handleRemove(item.id)}>Remove</Button>
                                 </span>
                             </div>

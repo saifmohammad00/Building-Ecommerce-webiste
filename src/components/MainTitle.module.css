@@ -1,0 +1,10 @@
+.mainTitle{
+    height: 30vh;
+    background-color: #777;
+    margin-top: 3px;
+}
+.mainTitle h1{
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}

@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react"
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
-import ContextApi from "../Store/ContextApi";
+import ContextApi from "../context/ContextApi";
 
 const ProductItems = () => {
     const productsArr = [
