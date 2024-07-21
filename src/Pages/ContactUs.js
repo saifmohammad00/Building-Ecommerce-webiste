@@ -6,6 +6,7 @@ const ContactUs=()=>{
     const handleSubmit = async (event) => {
         event.preventDefault();
         if(event.target.name.value==="" || event.target.email.value==="" || event.target.password.value===""){
+            setisValid(true);
             return;
         }
         const formData = {
