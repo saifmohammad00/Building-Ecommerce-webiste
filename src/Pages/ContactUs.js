@@ -32,10 +32,10 @@ const ContactUs=()=>{
         }
       };
     return <>
-    <Container className="m-5 align-items-center">
-        <h1>Contact Us</h1>
+    <Container className="mb-5" style={{maxWidth:"30rem"}}>
+        <h1 className="text-center">Contact Us</h1>
         <Form noValidate validated={isValid} onSubmit={handleSubmit}>
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>Name</Form.Label>
           <Form.Control
             required
@@ -45,7 +45,7 @@ const ContactUs=()=>{
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
+        <Form.Group as={Col} controlId="validationCustom02">
           <Form.Label>Email Id</Form.Label>
           <Form.Control
             required
@@ -55,7 +55,7 @@ const ContactUs=()=>{
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom03" className="mb-3">
+        <Form.Group as={Col} controlId="validationCustom03" className="mb-3">
           <Form.Label>Password</Form.Label>
           <Form.Control
             required
