@@ -1,0 +1,41 @@
+
+.mainTitle{
+    height: 30vh;
+    background: #777;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    text-align: center;
+    display: block;
+}
+.mainTitle h1{
+    font-size: 100px;
+    color: white;
+}
+.mainTitle div{
+    background: inherit;
+    margin-bottom: 500px;
+    display: block;
+}
+.album{
+    display: block;
+    border: 1px solid #56CCF2;
+    padding: 15px 30px;
+    font-size: 23px;
+    font-weight: 200;
+    margin: 10px auto;
+    background: inherit;
+    cursor: pointer;
+    color: white;
+}
+.playbtn{
+    cursor: pointer;
+    border: 1px solid #56CCF2;
+    border-radius: 50%;
+    padding: 15px 30px;
+    font-size: 30px;
+    font-weight: 200;
+    margin: 10px auto;
+    background: inherit;
+    color: #56CCF2;
+    display: block;
+}

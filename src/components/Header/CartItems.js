@@ -1,6 +1,6 @@
 import { Offcanvas, Button, ListGroup } from "react-bootstrap";
 import { useContext, useState } from "react";
-import ContextApi from "../context/ContextApi";
+import ContextApi from "../../context/ContextApi";
 const cartElements = [
 
     {
@@ -54,7 +54,7 @@ const CartItems = () => {
     }
     return <>
         <Button variant="primary" onClick={handleShow} className="me-3">Cart {conCtx.items.length}</Button>
-        <Offcanvas show={show} onHide={handleClose} placement="end" backdrop={false} scroll={true} >
+        <Offcanvas show={show} onHide={handleClose} placement="end" backdrop={false} scroll={true} style={{maxHeight:"90vh",marginTop:"80px",border: '2px solid #007bff'}}>
             <Offcanvas.Header closeButton >
                 <Offcanvas.Title>Cart Items</Offcanvas.Title>
             </Offcanvas.Header>
