@@ -6,6 +6,7 @@ import Store from "./Pages/Store";
 import About from "./Pages/About";
 import MainTitle from "./components/Header/MainTitle";
 import Footer from "./components/Footer";
+import ContactUs from "./Pages/ContactUs";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/store" element={<Store/>}></Route>
           <Route path="/about" element={<About/>}></Route>
+          <Route path="/contactus" element={<ContactUs/>}></Route>
         </Routes>
         <Footer/>
         </ContextProvider>

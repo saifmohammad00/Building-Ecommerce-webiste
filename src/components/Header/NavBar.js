@@ -6,11 +6,7 @@ const NavBar = () => {
     const location=useLocation();
     const [showCart,setShowCart]=useState(false);
     useEffect(() => {
-        if (location.pathname === "/store") {
-            setShowCart(true);
-        } else {
-            setShowCart(false);
-        }
+        setShowCart(location.pathname === "/store");
     }, [location.pathname]);
     return <>
         <Navbar bg="dark" data-bs-theme="dark" fixed="top">
@@ -19,6 +15,7 @@ const NavBar = () => {
                     <Nav.Link onClick={()=>setShowCart(false)} as={Link} to="/"><h3>HOME</h3></Nav.Link>
                     <Nav.Link onClick={()=>setShowCart(true)} as={Link} to="/store"><h3>STORE</h3></Nav.Link>
                     <Nav.Link onClick={()=>setShowCart(false)} as={Link} to="/about"><h3>ABOUT</h3></Nav.Link>
+                    <Nav.Link onClick={()=>setShowCart(false)} as={Link} to="/contactus"><h3>CONTACT US</h3></Nav.Link>
                 </Nav>
             </Container>
             {showCart && <CartItems/>}
