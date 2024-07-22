@@ -27,6 +27,7 @@ const App = () => {
           {!authCtx.isLoggedIn && <Route path="/store" element={<Navigate to="/login"/>}></Route>}
           {authCtx.isLoggedIn && <Route path="/store" element={<Store/>}></Route>}
           <Route path="/login" element={<LoginPage/>}></Route>
+          <Route path="*" element={<Navigate to="/"/>}></Route>
         </Routes>
         <Footer/>
         </ContextProvider>

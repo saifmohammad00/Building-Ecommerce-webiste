@@ -38,6 +38,9 @@ const LoginPage = () => {
             }
         })
             .then((data) => {
+                let uemail=data.email;
+                uemail=uemail.replace(/[.@]/g, ''); 
+                localStorage.setItem("email",uemail);
                 authCtx.login(data.idToken);
                 navigate("/store");
             })
