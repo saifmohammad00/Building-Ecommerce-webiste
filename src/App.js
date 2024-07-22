@@ -8,6 +8,7 @@ import MainTitle from "./components/Header/MainTitle";
 import Footer from "./components/Footer";
 import ContactUs from "./Pages/ContactUs";
 import ProductDetails from "./Pages/ProductDetails";
+import LoginPage from "./Pages/LoginPage";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/about" element={<About/>}></Route>
           <Route path="/contactus" element={<ContactUs/>}></Route>
           <Route path="/productDetails/:index" element={<ProductDetails/>}></Route>
+          <Route path="/login" element={<LoginPage/>}></Route>
         </Routes>
         <Footer/>
         </ContextProvider>
