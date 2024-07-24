@@ -26,6 +26,7 @@ const ContactUs=()=>{
                 throw new Error("something went wrong");
             }
             event.target.reset();
+            setisValid(false);
         }
         catch(error){
             console.log(error.message);
